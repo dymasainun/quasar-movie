@@ -13,7 +13,7 @@
         </q-btn>
 
         <q-toolbar-title class="absolute-center">
-          Awesome Todo
+          Movie App
         </q-toolbar-title>
 
       </q-toolbar>
