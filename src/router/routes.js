@@ -1,17 +1,17 @@
 
 const routes = [
   {
-    path: '/',
-    component: () => import('layouts/Layout.vue'),
+    path: '/movie',
+    component: () => import('layouts/MyLayout.vue'),
     children: [
-      { 
-        path: '', 
-        component: () => import('pages/PageTodo.vue') 
-      },
-      { 
-        path: '/settings', 
-        component: () => import('pages/PageSettings.vue') 
-      }
+      { path: '', component: () => import('pages/Movie.vue') }
+    ]
+  },
+  {
+    path: '/',
+    component: () => import('layouts/MyLayout.vue'),
+    children: [
+      { path: '', component: () => import('pages/Index.vue') }
     ]
   }
 ]
