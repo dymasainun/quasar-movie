@@ -7,11 +7,12 @@ module.exports = function (ctx) {
     // --> boot files are part of "main.js"
     // https://quasar.dev/quasar-cli/cli-documentation/boot-files
     boot: [
+      'axios'
     ],
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: [
-      'app.sass'
+      'app.scss'
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
@@ -42,22 +43,19 @@ module.exports = function (ctx) {
       all: 'auto',
 
       components: [
-        'QHeader',
-        'QFooter',
-        'QTabs',
-        'QTab',
-        'QRouteTab',
-        'QDrawer',
-        'QList',
-        'QItem',
-        'QItemSection',
-        'QItemLabel',
-        'QIcon'
+        'QInput',
+        'QBtn',
+        'QCard',
+        'QCardSection',
+        'QCardActions'
       ],
       directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Loading',
+        'Notify'
+      ]
     },
 
     // https://quasar.dev/quasar-cli/cli-documentation/supporting-ie
@@ -75,7 +73,16 @@ module.exports = function (ctx) {
       // extractCSS: false,
 
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
-      extendWebpack(cfg) {
+      extendWebpack (cfg) {
+        cfg.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /node_modules/,
+          options: {
+            formatter: require('eslint').CLIEngine.getFormatter('stylish')
+          }
+        })
       }
     },
 
@@ -100,8 +107,8 @@ module.exports = function (ctx) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: 'Awesome Todo',
-        short_name: 'Awesome Todo',
+        name: 'Quasar Movie',
+        short_name: 'Quasar Movie',
         description: 'A Quasar Framework app',
         display: 'standalone',
         orientation: 'portrait',
@@ -169,15 +176,13 @@ module.exports = function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'awesome-todo'
+        appId: 'quasar-movie'
       },
 
-      // keep in sync with /src-electron/main-process/electron-main
-      // > BrowserWindow > webPreferences > nodeIntegration
       // More info: https://quasar.dev/quasar-cli/developing-electron-apps/node-integration
       nodeIntegration: true,
 
-      extendWebpack(cfg) {
+      extendWebpack (cfg) {
         // do something with Electron main process Webpack cfg
         // chainWebpack also available besides this extendWebpack
       }
