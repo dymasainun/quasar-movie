@@ -9,7 +9,6 @@
                 <q-btn name="search" color="primary" label="Primary" @click="searchbutton" />
               </template>
             </q-input>
-            <q-btn color="teal" @click="showLoading" label="Show Loading" />
         </div>
         <template>
           <div class="q-pa-md row items-start q-gutter-md">
@@ -65,16 +64,7 @@ export default {
   },
   methods: {
     searchbutton () {
-      this.text = 'input'
-    },
-    showLoading () {
-      this.$q.loading.show()
-
-      // hiding in 2s
-      this.timer = setTimeout(() => {
-        this.$q.loading.hide()
-        this.timer = void 0
-      }, 2000)
+      this.text = 'oi'
     }
   }
 }

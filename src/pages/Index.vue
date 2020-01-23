@@ -8,7 +8,7 @@
 export default {
   name: 'PageIndex',
   created () {
-    this.$axios.get('http://www.omdbapi.com/?i=tt3896198&apikey=c0771d02')
+    this.$axios.get('http://www.omdbapi.com/?apikey=c0771d02&s=harrypotter')
       .then(response => {
         console.log(response)
       })
