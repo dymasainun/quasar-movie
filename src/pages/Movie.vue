@@ -6,7 +6,7 @@
         <div>
             <q-input v-model="text" filled type="search" label="Movie title...">
               <template v-slot:append>
-                <q-btn name="search" color="primary" label="Primary" @click="searchbutton" />
+                <q-btn name="search" color="primary" label="Search" @click="searchbutton" />
               </template>
             </q-input>
         </div>
@@ -18,40 +18,27 @@
               />
 
               <q-card-section>
-                <div class="text-overline text-orange-9">Overline</div>
-                <div class="text-h5 q-mt-sm q-mb-xs">Title</div>
-                <div class="text-caption text-grey">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </div>
+                <div class="text-h5 q-mt-sm q-mb-l">Judul Film</div>
+                <div class="text-caption text-grey">Tahun</div>
               </q-card-section>
 
               <q-card-actions>
-                <q-btn flat color="dark" label="Share" />
-                <q-btn flat color="primary" label="Book" />
+                <q-btn flat color="dark" label="See Detail" />
+              <q-space />
 
-                <q-space />
-
-                <q-btn
-                  color="grey"
-                  round
-                  flat
-                  dense
-                  :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
-                  @click="expanded = !expanded"
-                />
+              <q-btn
+                color="grey"
+                round
+                flat
+                dense
+                :icon="expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+                @click="expanded = !expanded"
+              />
               </q-card-actions>
-
-              <q-slide-transition>
-                <div v-show="expanded">
-                  <q-separator />
-                  <q-card-section class="text-subitle2">
-                    {{ lorem }}
-                  </q-card-section>
-                </div>
-              </q-slide-transition>
             </q-card>
           </div>
         </template>
+
     </q-page>
 </template>
 
@@ -64,7 +51,7 @@ export default {
   },
   methods: {
     searchbutton () {
-      this.text = 'oi'
+      this.text = 'Harry Potter'
     }
   },
   created () {
