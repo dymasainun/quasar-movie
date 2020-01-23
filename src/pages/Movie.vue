@@ -66,6 +66,15 @@ export default {
     searchbutton () {
       this.text = 'oi'
     }
+  },
+  created () {
+    this.$axios.get('http://www.omdbapi.com/?apikey=c0771d02&s=harrypotter')
+      .then(response => {
+        console.log(response)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
 }
 </script>
