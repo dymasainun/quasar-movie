@@ -1,23 +1,37 @@
 {
+<<<<<<< HEAD
   "name": "quasar-movie",
   "version": "0.0.1",
   "description": "A Quasar Framework app",
   "productName": "Quasar Movie",
+=======
+  "name": "awesome-todo",
+  "version": "0.0.1",
+  "description": "A Quasar Framework app",
+  "productName": "Awesome Todo",
+>>>>>>> 9e3ffff01b9ce424551a4e6a23ed62c6eba11fa7
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",
   "author": "dymasainun <nundymas@gmail.com>",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "lint": "eslint --ext .js,.vue src",
+=======
+>>>>>>> 9e3ffff01b9ce424551a4e6a23ed62c6eba11fa7
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
+<<<<<<< HEAD
     "axios": "^0.18.1",
+=======
+>>>>>>> 9e3ffff01b9ce424551a4e6a23ed62c6eba11fa7
     "quasar": "^1.0.0"
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",
+<<<<<<< HEAD
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.10.0",
@@ -28,6 +42,15 @@
     "node": ">= 10.18.1",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
+=======
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2"
+  },
+  "engines": {
+    "node": ">= 8.9.0",
+    "npm": ">= 5.6.0",
+    "yarn": ">= 1.6.0"
+>>>>>>> 9e3ffff01b9ce424551a4e6a23ed62c6eba11fa7
   },
   "browserslist": [
     "last 1 version, not dead, ie >= 11"
